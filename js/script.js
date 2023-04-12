@@ -6,13 +6,18 @@ let loadData = (snn) => {
 };
 
 let showData = (phone) => {
+  // get the container id
   let get1 = document.getElementById("container");
-
+  // empty the container
   get1.textContent = "";
 
+  //loop the container
   phone.forEach((single) => {
     // here is dom manipulation
+
+    //create a div
     let create = document.createElement("div");
+    // add one class name
     create.classList.add("col");
 
     create.innerHTML = `
@@ -30,6 +35,7 @@ let showData = (phone) => {
     `;
     // here is dom manipulation ends
 
+    // send or append a child on container
     get1.appendChild(create);
   });
 };
@@ -41,9 +47,8 @@ let showData = (phone) => {
 // });
 
 let btn = () => {
-    let get1=document.getElementById("input").value
-loadData(get1);
-
+  let get1 = document.getElementById("input").value;
+  loadData(get1);
 };
 
 loadData();
