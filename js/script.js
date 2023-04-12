@@ -11,6 +11,7 @@ let showData = (phone) => {
   let get1 = document.getElementById("container");
 
   phone.forEach((single) => {
+    // here is dom manipulation
     let create = document.createElement("div");
     create.classList.add("col");
 
@@ -27,6 +28,8 @@ let showData = (phone) => {
 
       </div>
     `;
+    // here is dom manipulation ends
+
 
     get1.appendChild(create);
   });
