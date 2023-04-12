@@ -1,14 +1,14 @@
-let loadData = () => {
-  let url = `https://openapi.programming-hero.com/api/phones?search=iphone`;
+let loadData = (snn) => {
+  let url = `https://openapi.programming-hero.com/api/phones?search=${snn}`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => showData(data.data));
 };
 
 let showData = (phone) => {
-  console.log(phone);
-
   let get1 = document.getElementById("container");
+
+  get1.textContent = "";
 
   phone.forEach((single) => {
     // here is dom manipulation
@@ -30,9 +30,20 @@ let showData = (phone) => {
     `;
     // here is dom manipulation ends
 
-
     get1.appendChild(create);
   });
+};
+
+// document.getElementById("btn").addEventListener("click", function () {
+//   let get12 = document.getElementById("input").value;
+//   console.log(get12);
+//   loadData(get12);
+// });
+
+let btn = () => {
+    let get1=document.getElementById("input").value
+loadData(get1);
+
 };
 
 loadData();
